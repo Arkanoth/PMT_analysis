@@ -1,0 +1,3 @@
+[infn_converter.singlephotons]
+csvdata_file = "ITk/test_KM65928/test"
+output_file = "ITk/test_KM65928/sp.root"
