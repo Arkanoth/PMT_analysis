@@ -1,6 +1,6 @@
 ' XStreamDSO ConfigurationVBScript ...
 ' LECROY,WM806Zi-B,LCRY0857N75172,9.3.0
-' Monday, November 25, 2024 3:41:43 PM
+' Thursday, July 11, 2024 2:38:39 PM
 
 On Error Resume Next
 set XStreamDSO = CreateObject("LeCroy.XStreamDSO")
@@ -39,7 +39,7 @@ Set Display = XStreamDSO.Display
 ' Display ...
 Display.GridMode = "Single"
 Display.TraceStyle = "Line"
-Display.TraceIntensity = 24
+Display.TraceIntensity = 26
 Display.GridIntensity = 40
 Display.GridOnTop = False
 Display.AxisLabelsForTopTrace = True
@@ -331,9 +331,9 @@ C2.ViewLabels = False
 C2.SegmentMode = "Overlay"
 C2.LogX = False
 C2.SupportsStdCursors = True
-C2.VerScale = 0.02
+C2.VerScale = 0.005
 C2.VerScaleVariable = False
-C2.VerOffset = 0.06
+C2.VerOffset = 0.01
 C2.AverageSweeps = 1
 C2.EnhanceResType = "None"
 C2.Invert = False
@@ -343,14 +343,14 @@ C2.Interpolation = "NONE"
 C2.StartSamples = 1
 C2.EndSamples = 1
 C2.OptimizeGroupDelay = "PulseResponse"
-C2.ActiveInput = "InputB"
+C2.ActiveInput = "InputA"
 C2.Type = "Length"
 C2.Units = "undef"
 C2.ProbeLabel = ""
 C2.ProbeAttenuation = 1
 C2.Coupling = "DC50"
 C2.BandwidthLimit = "Full"
-C2.BandwidthLimitVariable = 3500000000
+C2.BandwidthLimitVariable = 6000000000
 C2.Unit = "V"
 C2.Multiplier = 1
 C2.Adder = 0
@@ -374,9 +374,9 @@ C2InputA.Coupling = "DC50"
 
 Set C2InputB = C2.InputB
 ' InputB ...
-C2InputB.VerScale = 0.02
+C2InputB.VerScale = 0.05
 C2InputB.VerScaleVariable = False
-C2InputB.VerOffset = 0.06
+C2InputB.VerOffset = 0.1212
 C2InputB.ProbeAttenuation = 1
 C2InputB.Unit = "V"
 C2InputB.Type = "Length"
@@ -467,7 +467,7 @@ C3InputB.Coupling = "DC50"
 
 Set C4 = Acquisition.C4
 ' C4 ...
-C4.View = False
+C4.View = True
 C4.Alias = ""
 C4.UseGrid = "YT1"
 C4.UseLandscape = "MainLandscape"
@@ -489,7 +489,7 @@ C4.LogX = False
 C4.SupportsStdCursors = True
 C4.VerScale = 1
 C4.VerScaleVariable = False
-C4.VerOffset = -2.18
+C4.VerOffset = -2.76
 C4.AverageSweeps = 1
 C4.EnhanceResType = "None"
 C4.Invert = False
@@ -532,7 +532,7 @@ Set C4InputB = C4.InputB
 ' InputB ...
 C4InputB.VerScale = 1
 C4InputB.VerScaleVariable = False
-C4InputB.VerOffset = -2.18
+C4InputB.VerOffset = -2.76
 C4InputB.ProbeAttenuation = 1
 C4InputB.Unit = "V"
 C4InputB.Type = "Length"
@@ -545,21 +545,21 @@ C4InputB.Coupling = "DC50"
 
 Set Horizontal = Acquisition.Horizontal
 ' Horizontal ...
-Horizontal.SampleMode = "Sequence"
-Horizontal.NumSegments = 3000
+Horizontal.SampleMode = "RealTime"
+Horizontal.NumSegments = 2500
 Horizontal.SequenceTimeout = 100
 Horizontal.SequenceTimeoutEnable = False
 Horizontal.SampleClock = "Internal"
 Horizontal.Maximize = "FixedSampleRate"
 Horizontal.SampleRate = 40000000000
-Horizontal.HorScale = 0.00000002
-Horizontal.HorOffset = -0.00000006
+Horizontal.HorScale = 0.00001
+Horizontal.HorOffset = -0.0000004
 Horizontal.HorOffsetOrigin = 5
 Horizontal.ReferenceClock = "Internal"
 Horizontal.ReferenceClockOut = "10MHz"
 Horizontal.ActiveChannels = "4"
 Horizontal.MaxSamples = 10000
-Horizontal.ExtraStartSamplesHorz = 4849
+Horizontal.ExtraStartSamplesHorz = 4855
 Horizontal.ExtraEndSamplesHorz = 4097
 
 Set Trigger = Acquisition.Trigger
@@ -569,14 +569,14 @@ Trigger.ResetTrigCounter = True
 Trigger.C1Level = 2.39
 Trigger.C1Slope = "Positive"
 Trigger.C1Coupling = "DC"
-Trigger.C2Level = -0.0054
+Trigger.C2Level = -0.0057
 Trigger.C2Slope = "Negative"
 Trigger.C2Coupling = "DC"
 Trigger.C3Level = -0.003
 Trigger.C3Slope = "Positive"
 Trigger.C3Coupling = "DC"
-Trigger.C4Level = 0.05
-Trigger.C4Slope = "Negative"
+Trigger.C4Level = 0.95
+Trigger.C4Slope = "Positive"
 Trigger.C4Coupling = "DC"
 Trigger.ExtLevel = 0.016
 Trigger.ExtSlope = "Negative"
@@ -596,19 +596,19 @@ TriggerSoftwareAssistedTrigger.HorGateStop = 0.000000001
 TriggerSoftwareAssistedTrigger.Hysteresis = 0.5
 TriggerSoftwareAssistedTrigger.Mode = "Auto"
 
+Set TriggerLegacyRemote = Trigger.LegacyRemote
+' LegacyRemote ...
+
 Set TriggerEdge = Trigger.Edge
 ' Edge ...
-TriggerEdge.Source = "C4"
-TriggerEdge.Level = 0.05
+TriggerEdge.Source = "C2"
+TriggerEdge.Level = -0.0057
 TriggerEdge.Slope = "Negative"
 TriggerEdge.Coupling = "DC"
 TriggerEdge.HoldoffType = "Off"
 TriggerEdge.HoldoffTime = 0.00000005
 TriggerEdge.HoldoffEvents = 1000
 TriggerEdge.OptimizeForHF = True
-
-Set TriggerLegacyRemote = Trigger.LegacyRemote
-' LegacyRemote ...
 
 Set Maths = XStreamDSO.Math
 ' Math ...
@@ -877,6 +877,10 @@ F5Zoom.VerZoom = 1
 
 Set F5Rescale = F5.Rescale
 ' Rescale ...
+F5Rescale.Multiplier = 1
+F5Rescale.Adder = 0
+F5Rescale.CustomUnit = False
+F5Rescale.Unit = ""
 
 Set F5Operator1Setup = F5.Operator1Setup
 ' Operator1Setup ...
@@ -1097,6 +1101,10 @@ F9Zoom.VerZoom = 1
 
 Set F9Rescale = F9.Rescale
 ' Rescale ...
+F9Rescale.Multiplier = 1
+F9Rescale.Adder = 0
+F9Rescale.CustomUnit = False
+F9Rescale.Unit = ""
 
 Set F9Operator1Setup = F9.Operator1Setup
 ' Operator1Setup ...
@@ -1716,7 +1724,7 @@ Set M1 = Memory.M1
 ' M1 ...
 M1.View = False
 M1.Alias = "ratio"
-M1.UseGrid = "YT1"
+M1.UseGrid = "NotOnGrid"
 M1.UseLandscape = "MainLandscape"
 M1.Persisted = False
 M1.PersistenceSaturation = 36
@@ -2529,9 +2537,9 @@ P12Accept.AbsLevel = 0
 Set PassFail = XStreamDSO.PassFail
 ' PassFail ...
 PassFail.Testing = True
-PassFail.EnableActions = False
+PassFail.EnableActions = True
 PassFail.PredefinedConditions = "AllTrue"
-PassFail.ActionOn = "Pass"
+PassFail.ActionOn = "Fail"
 PassFail.Stop = True
 PassFail.Alarm = False
 PassFail.SaveToLabNotebook = False
@@ -2540,7 +2548,7 @@ PassFail.UserAction = False
 PassFail.Pulse = False
 PassFail.Save = True
 PassFail.StopTesting = True
-PassFail.StopAfter = 1000000
+PassFail.StopAfter = 10
 PassFail.StartAfter = 0
 PassFail.SummaryView = False
 
@@ -2548,7 +2556,7 @@ Set Q1 = PassFail.Q1
 ' Q1 ...
 Q1.View = True
 Q1.ConditionEngine = "ParameterCompare"
-Q1.PSource1 = "P2"
+Q1.PSource1 = "P10"
 Q1.PSource2 = "P1"
 Q1.WSource1 = "C2"
 Q1.WSource2 = "C1"
@@ -2558,8 +2566,8 @@ Q1.FastTrace = False
 Set Q1Operator = Q1.Operator
 ' Operator ...
 Q1Operator.CompareValues = "All"
-Q1Operator.Condition = "GreaterEqual"
-Q1Operator.Limit = 0.03
+Q1Operator.Condition = "Less"
+Q1Operator.Limit = 1000000000000
 Q1Operator.DeltaPct = 1
 Q1Operator.Delta = 0.000000000001
 

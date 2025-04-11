@@ -1,0 +1,180 @@
+[osclec_converter.out1]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out1"
+
+[pulse_analysis.out1]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out2]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out2"
+
+[pulse_analysis.out2]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out3]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out3"
+
+[pulse_analysis.out3]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out4]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out4"
+
+[pulse_analysis.out4]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out5]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out5"
+
+[pulse_analysis.out5]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out6]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out6"
+
+[pulse_analysis.out6]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out7]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out7"
+
+[pulse_analysis.out7]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out8]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out8"
+
+[pulse_analysis.out8]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out9]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out9"
+
+[pulse_analysis.out9]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out10]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out10"
+
+[pulse_analysis.out10]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out11]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out11"
+
+[pulse_analysis.out11]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+
+[osclec_converter.out12]
+invert_polarity = true
+threshold = 0
+rawdata_directory = "out12"
+
+[pulse_analysis.out12]
+bins_ampl = 30
+bins_Q = 80
+bins_Qnoise = 40
+cut_fraction = 0.2
+threshold = 0.004
+max_ampl = 0.2
+
+###########
+

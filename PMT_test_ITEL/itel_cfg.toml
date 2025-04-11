@@ -1,0 +1,4 @@
+## DATA PARSING
+[infn_converter.singlephotons]
+csvdata_file = "KM66026/test"
+output_file = "root_data/KM66026.root"
